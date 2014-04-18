@@ -1,0 +1,15 @@
+{
+    "name": "shane/jquery-bundle",
+    "type": "symfony-bundle",
+    "description": "Easy version management and Twig support for jQuery",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shane Preece",
+            "email": "shane@leafcanvas.com"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": "~2.3"
+    }
+}
