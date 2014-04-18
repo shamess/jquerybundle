@@ -10,7 +10,12 @@
         }
     ],
     "require": {
-        "symfony/framework-bundle": "~2.3"
+        "symfony/framework-bundle": "~2.3",
+        "symfony/console": "2.4.x",
+        "guzzlehttp/guzzle": "4.0.x"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.9.x"
     },
     "autoload": {
         "psr-4": { "Shane\\JqueryBundle\\": "" }
