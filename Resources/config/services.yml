@@ -1,0 +1,13 @@
+services:
+    shane.command.download_jquery:
+        class: Shane\JqueryBundle\Command\DownloadjQueryCommand
+        arguments:
+            - %jquery.version%
+            - %jquery.write_directory%
+            - "@shane.guzzle"
+        tags:
+            -  { name: console.command }
+
+    shane.guzzle:
+        class: GuzzleHttp\Client
+        public: false
