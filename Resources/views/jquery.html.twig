@@ -1,0 +1,9 @@
+{% if app.environment == 'prod' %}
+    {% javascripts '@ShaneJqueryBundle/Resources/public/js/jquery.min.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% else %}
+    {% javascripts '@ShaneJqueryBundle/Resources/public/js/jquery.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endif %}
