@@ -13,6 +13,7 @@ class Configuration implements ConfigurationInterface
     {
         $builder = new TreeBuilder();
 
+        // todo: naming the root here doesn't seem to do anything...
         $builder->root('jquery_management')
             ->children()
                 ->scalarNode('version')->defaultValue(self::DEFAULT_VERSION)->end()
