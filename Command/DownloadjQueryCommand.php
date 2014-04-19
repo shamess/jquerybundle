@@ -43,8 +43,20 @@ class DownloadjQueryCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $jquery = $this->guzzle->get('http://code.jquery.com/jquery-' . $this->version . '.js')->getBody();
+        $fileLocations = $this->getFileLocations();
 
-        file_put_contents($this->writeLocation, $jquery);
+        $jquery = $this->guzzle->get('http://code.jquery.com/jquery-' . $this->version . '.js')->getBody();
+        file_put_contents($this->writeLocation . '/' . $fileLocations['readable'], $jquery);
+
+        $jqueryMin = $this->guzzle->get('http://code.jquery.com/jquery-' . $this->version . '.min.js')->getBody();
+        file_put_contents($this->writeLocation . '/' . $fileLocations['minified'], $jquery);
+    }
+
+    public function getFileLocations()
+    {
+        return array(
+            'minified' => 'jquery.min.js',
+            'readable' => 'jquery.js',
+        );
     }
 }
