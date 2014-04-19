@@ -36,6 +36,7 @@ class DownloadjQueryCommandTest extends \PHPUnit_Framework_TestCase
 
     public function testWritesFilesToResourcesFolder()
     {
+
         $command = $this->application->find('jquery:download');
         $commandTester = new CommandTester($command);
         $commandTester->execute(array('command' => $command->getName()));
@@ -49,8 +50,8 @@ class DownloadjQueryCommandTest extends \PHPUnit_Framework_TestCase
 
     public function tearDown()
     {
-        unlink($this->jQueryDirectoryLocation . '/jquery.js');
-        unlink($this->jQueryDirectoryLocation . '/jquery.min.js');
+        unlink($this->jQueryDirectoryLocation . 'jquery.js');
+        unlink($this->jQueryDirectoryLocation . 'jquery.min.js');
 
         m::close();
     }

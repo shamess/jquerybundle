@@ -49,7 +49,7 @@ class DownloadjQueryCommand extends Command
         file_put_contents($this->writeLocation . '/' . $fileLocations['readable'], $jquery);
 
         $jqueryMin = $this->guzzle->get('http://code.jquery.com/jquery-' . $this->version . '.min.js')->getBody();
-        file_put_contents($this->writeLocation . '/' . $fileLocations['minified'], $jquery);
+        file_put_contents($this->writeLocation . '/' . $fileLocations['minified'], $jqueryMin);
     }
 
     public function getFileLocations()
